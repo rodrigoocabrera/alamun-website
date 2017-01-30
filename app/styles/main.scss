@@ -1,1 +1,345 @@
 @import 'vars';
+@import 'normalize';
+@import 'simplegrid';
+
+
+html, body {
+  height: 100%;
+  font-family: $font;
+  color: $gray;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Raleway', $font;
+  font-weight: 300;
+  margin: 0;
+  b {
+    font-weight: 700;
+  }
+}
+
+h1 {
+  font-size: 3.3em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+p {
+  font-weight: $thin;
+}
+
+.unscrollable {
+    overflow: hidden;
+}
+
+//------- BEGIN GENERAL STYLES -------//
+
+.center {
+  text-align: center;
+}
+
+//------- END GENERAL STYLES -------//
+
+
+//------- BEGIN BUTTONS -------//
+
+.btn {
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: $radius;
+  border: 2px solid;
+  transition: all 0.5s;
+  cursor: pointer;
+  font-family: $font;
+  font-weight: $light;
+  font-size: 18px;
+  white-space: nowrap;
+  display: inline-block;
+  text-align: center;
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.7;
+  }
+}
+
+.btn-block {
+  display: block;
+  margin-top: 16px;
+  &button, &[type="button"], &[type="submit"] {
+    width: 100%;
+  }
+}
+
+.btn-primary {
+  background-color: $aqua;
+  color: white;
+  border-color: $aqua;
+  &:hover:not(:disabled) {
+    background-color: white;
+    color: $aqua;
+  }
+}
+
+.btn-green {
+  background-color: $green;
+  color: white;
+  border-color: $green;
+  &:hover:not(:disabled) {
+    background-color: white;
+    color: $green;
+  }
+}
+
+.btn-gray {
+  background-color: $gray;
+  color: white;
+  border-color: $gray;
+  &:hover:not(:disabled) {
+    background-color: white;
+    color: $gray;
+  }
+}
+
+.btn-red {
+  background-color: $red;
+  color: white;
+  border-color: $red;
+  &:hover:not(:disabled) {
+    background-color: white;
+    color: $red;
+  }
+}
+
+.btn-light-gray {
+  background-color: $light-gray;
+  color: white;
+  border-color: $light-gray;
+  &:hover:not(:disabled) {
+    background-color: white;
+    color: $light-gray;
+  }
+}
+
+.btn-gray-inverse {
+  background-color: white;
+  color: $gray;
+  border-color: $gray;
+  &:hover:not(:disabled) {
+    background-color: $gray;
+    color: white;
+  }
+}
+
+.btn-red-inverse {
+  background-color: white;
+  color: $red;
+  border-color: $red;
+  &:hover:not(:disabled) {
+    background-color: $red;
+    color: white;
+  }
+}
+
+
+a {
+  text-decoration: none;
+}
+
+
+//------- END BUTTONS -------//
+
+//------- BEGIN NAVBAR -------//
+header {
+  margin-bottom: 24px;
+}
+header.fixed {
+  margin-bottom: 96px !important;
+  nav {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+}
+nav {
+  background-color: white;
+  height: 72px;
+  position: relative;
+  z-index: 100;
+
+
+  .logo {
+    position: absolute;
+    left: 16px;
+    top: 12px;
+    img {
+      height: 42px;
+    }
+  }
+
+  .helper-right {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: $bold;
+    text-transform: uppercase;
+    a {
+      color: $aqua;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    margin-left: 166px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    li {
+      display: inline-block;
+      margin-right: 40px;
+      &.active {
+        a {
+          background-color: $orange;
+          padding: 14px 24px;
+          border-radius: $radius;
+          color: white;
+        }
+      }
+      a {
+        text-decoration: none;
+        color: $light-gray;
+        font-weight: $bold;
+      }
+
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+  }
+
+  #show-menu {
+    display: none;
+    position: absolute;
+    right: 16px;
+    top: 14px;
+  }
+}
+@media handheld, only screen and (max-width: $mobile) {
+
+  nav {
+    ul {
+      display: none;
+    }
+    #show-menu {
+      display: block;
+    }
+
+    .helper-right {
+      display: none;
+    }
+  }
+  body.show-mobile-menu {
+    overflow: hidden;
+
+    header {
+      height: 100%;
+    }
+    nav {
+      height: 100%;
+
+      .helper-right {
+        display: block;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        top: 24px;
+      }
+      ul {
+        display: block;
+        margin: 0;
+        position: relative;
+        transform: none;
+        text-align: left;
+        top: 120px;
+        li {
+          display: block;
+          position: relative;
+          margin-left: 16px;
+          margin-bottom: 32px;
+          font-size: 24px;
+          &.active {
+            a {
+              padding: 0;
+              background-color: transparent;
+            }
+          }
+          a:not(.btn) {
+            font-weight: $light;
+            color: $aqua;
+          }
+          .btn {
+            display: block;
+            text-align: center;
+            margin-right: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+//------- END NAVBAR -------//
+
+//------- BEGIN ANGULAR -------//
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.invisible {
+  display: none !important;
+}
+//------- END ANGULAR -------//
+
+
+//------- BEGIN CARDS -------//
+
+.card {
+  height: 260px;
+  padding: 18px 16px;
+  .card-inner {
+    padding-top: 8px;
+    border-radius: $radius;
+    height: 100%;
+    box-shadow: 1px 1px 4px 3px rgba(0,0,0,0.05);
+    position: relative;
+    h2 {
+      text-align: center;
+      border-bottom: 3px solid;
+    }
+    .content {
+      text-align: center;
+      font-size: 1.1em;
+
+      p {
+        font-weight: $light;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+//------- END CARDS -------//
