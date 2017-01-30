@@ -74,9 +74,9 @@ config.$inject = ['$stateProvider','$urlRouterProvider', '$httpProvider'];
 app.config(config);
 
 
-function toggleMenu() {
+function toggleMenu(close) {
   'use strict';
-  var show = (document.body.className !== "show-mobile-menu"),
+  var show = (close) ? false : (document.body.className !== "show-mobile-menu"),
     d =  (show) ? "show-mobile-menu" : "",
     e = document.getElementById("show-menu");
   document.body.className = d;
