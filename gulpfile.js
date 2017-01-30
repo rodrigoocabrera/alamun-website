@@ -8,6 +8,7 @@ var lazypipe = require('lazypipe');
 var rimraf = require('rimraf');
 var wiredep = require('wiredep').stream;
 var runSequence = require('run-sequence');
+var gulpNgConfig = require('gulp-ng-config');
 
 var yeoman = {
   app: require('./bower.json').appPath || 'app',
@@ -58,7 +59,7 @@ gulp.task('clean:tmp', function (cb) {
 });
 
 gulp.task('start:client', ['start:server', 'styles'], function () {
-  openURL('http://localhost:9000');
+  //openURL('http://localhost:9000');
 });
 
 gulp.task('start:server', function() {
@@ -93,6 +94,9 @@ gulp.task('watch', function () {
 });
 
 gulp.task('serve', function (cb) {
+  gulp.src(yeoman.app + '/../constants.json')
+  .pipe(gulpNgConfig('alamun.config', { environment: 'development' }))
+  .pipe(gulp.dest(yeoman.app + '/scripts/'));
   runSequence('clean:tmp',
     ['lint:scripts'],
     ['start:client'],
@@ -129,6 +133,10 @@ gulp.task('clean:dist', function (cb) {
 gulp.task('client:build', ['html', 'styles'], function () {
   var jsFilter = $.filter('**/*.js');
   var cssFilter = $.filter('**/*.css');
+
+  gulp.src(yeoman.app + '/../constants.json')
+  .pipe(gulpNgConfig('alamun.config', { environment: 'production' }))
+  .pipe(gulp.dest(yeoman.app + '/scripts/'));
 
   return gulp.src(paths.views.main)
     .pipe($.useref({searchPath: [yeoman.app, '.tmp']}))

@@ -1,4 +1,21 @@
 <div class="committees-wrapper" ng-init="init()">
     <h1 class="center">Committees List</h1>
     <div class="spinner centered" ng-if="loading"></div>
+
+    <div class="committees-inner grid" ng-if="!loading">
+        <div class="card col-6-12" data-ng-repeat="committee in committees">
+            <div class="card-inner">
+                <h2 style="border-color:{{committee.color || '#2DD49B' }}">{{committee.name}}</h2>
+                <div class="content">
+                    <p ng-repeat="topic in committee.topics">{{topic.title}}</p>
+                    <p ng-if="committee.topics.length == 0" class="helper">This committee has no topics.</p>
+                    <a class="btn btn-helper" ui-sref="app.committees.detail(committee.id)" style="border-color:{{committee.color || '#2DD49B' }};color:{{committee.color || '#2DD49B' }}">Details</a>
+                    <span class="left-stat">
+                        <span class="number">{{committee.delegations || '0'}}</span>
+                        <span class="caption">delegations</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

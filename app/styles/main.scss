@@ -318,7 +318,7 @@ nav {
 //------- BEGIN CARDS -------//
 
 .card {
-  height: 260px;
+  height: 300px;
   padding: 18px 16px;
   .card-inner {
     padding-top: 8px;
@@ -334,11 +334,36 @@ nav {
       text-align: center;
       font-size: 1.1em;
 
+      .btn-helper {
+        color: $gray;
+        border-color: $gray;
+        position: absolute;
+        bottom: 16px;
+        right: 16px;
+      }
+
+      .left-stat {
+        position: absolute;
+        bottom: 16px;
+        left: 32px;
+        span {
+          display: block;
+          &.number {
+            font-weight: $bold;
+            font-family: 'Raleway';
+            font-size: 1.85em;
+          }
+        }
+      }
+
       p {
         font-weight: $light;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
+        word-break: break-all;
+        font-size: 1.1em;
+        margin: 16px;
+        &.helper {
+          font-style: italic;
+        }
       }
     }
   }

@@ -41,7 +41,8 @@ function config($stateProvider, $urlRouterProvider) {
 var app = angular.module('alamunWebsiteApp', [
     'ngAnimate',
     'ngTouch',
-    'ui.router'
+    'ui.router',
+    'alamun.config'
 ]);
 
 config.$inject = ['$stateProvider','$urlRouterProvider'];
