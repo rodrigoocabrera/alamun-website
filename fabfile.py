@@ -10,3 +10,4 @@ def deploy():
         run('npm install')
         run('bower install')
         run('gulp')
+        sudo('service nginx restart')
