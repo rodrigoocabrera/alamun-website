@@ -10,5 +10,6 @@ def deploy():
         run('npm install')
         run('bower install')
         run('gulp')
+    with cd('/home/rails/alamun-website/dist'):
         run("rename -v 's/.+/index.html/' ./index-*.html")
         sudo('service nginx restart')
