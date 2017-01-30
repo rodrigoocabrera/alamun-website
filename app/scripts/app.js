@@ -35,6 +35,10 @@ function config($stateProvider, $urlRouterProvider) {
       url: "/committees",
       controller: 'CommitteesCtrl',
       templateUrl: "views/committees.html",
+    }).state('app.committees_detail', {
+      url: "/committees/{slug}",
+      controller: 'CommitteesDetailCtrl',
+      templateUrl: "views/committees-detail.html",
     });
 }
 

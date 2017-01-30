@@ -23,8 +23,15 @@ function CommitteesCtrl($scope, $http, $env) {
     };
 }
 
+
+function CommitteesDetailCtrl($scope, $http, $env) {
+    
+}
+
 CommitteesCtrl.$inject = ['$scope','$http', '$env'];
+CommitteesDetailCtrl.$inject = ['$scope','$http', '$env'];
 
 var app = angular.module('alamunWebsiteApp');
 
-app.controller('CommitteesCtrl', CommitteesCtrl);
+app.controller('CommitteesCtrl', CommitteesCtrl)
+    .controller('CommitteesDetailCtrl', CommitteesDetailCtrl);

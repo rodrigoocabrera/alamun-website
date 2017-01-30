@@ -209,13 +209,11 @@ nav {
     li {
       display: inline-block;
       margin-right: 40px;
-      &.active {
-        a {
-          background-color: $orange;
-          padding: 14px 24px;
-          border-radius: $radius;
-          color: white;
-        }
+      a.active {
+        background-color: $orange;
+        padding: 14px 24px;
+        border-radius: $radius;
+        color: white;
       }
       a {
         text-decoration: none;
