@@ -3,6 +3,7 @@
 @import 'simplegrid';
 @import 'committees';
 @import 'contact';
+@import 'registration';
 
 html, body {
   height: calc(100% - 96px);
@@ -40,6 +41,10 @@ p {
 
 .unscrollable {
     overflow: hidden;
+}
+
+a {
+    color: $green;
 }
 
 //------- BEGIN GENERAL STYLES -------//

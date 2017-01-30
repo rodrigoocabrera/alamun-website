@@ -43,8 +43,10 @@ function config($stateProvider, $urlRouterProvider, $httpProvider) {
       templateUrl: "views/committees-detail.html",
     }).state('app.contact', {
       url: "/contact",
-      controller: 'ContactCtrl',
       templateUrl: "views/contact.html",
+    }).state('app.registration', {
+      url: "/registration",
+      templateUrl: "views/registration.html",
     });
 }
 
