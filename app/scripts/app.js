@@ -62,3 +62,13 @@ var app = angular.module('alamunWebsiteApp', [
 config.$inject = ['$stateProvider','$urlRouterProvider', '$httpProvider'];
 
 app.config(config);
+
+
+function toggleMenu() {
+  'use strict';
+  var show = (document.body.className !== "show-mobile-menu"),
+    d =  (show) ? "show-mobile-menu" : "",
+    e = document.getElementById("show-menu");
+  document.body.className = d;
+  e.innerHTML = (show) ? "Close" : "Menu";
+}

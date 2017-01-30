@@ -234,12 +234,14 @@ nav {
     li {
       display: inline-block;
       margin-right: 40px;
+    @media only screen and (min-width: 1030px) {
       a.active {
         background-color: $orange;
         padding: 14px 24px;
         border-radius: $radius;
         color: white;
       }
+    }
       a {
         text-decoration: none;
         color: $light-gray;
@@ -259,7 +261,7 @@ nav {
     top: 14px;
   }
 }
-@media handheld, only screen and (max-width: $mobile) {
+@media handheld, only screen and (max-width: 1030px) {
 
   nav {
     ul {
@@ -310,7 +312,7 @@ nav {
           }
           a:not(.btn) {
             font-weight: $light;
-            color: $aqua;
+            color: $green;
           }
           .btn {
             display: block;
