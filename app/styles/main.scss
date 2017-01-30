@@ -1,17 +1,19 @@
 @import 'vars';
 @import 'normalize';
 @import 'simplegrid';
+@import 'committees';
 
 
 html, body {
-  height: 100%;
+  height: calc(100% - 96px);
   font-family: $font;
   color: $gray;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Raleway', $font;
-  font-weight: 300;
+  font-weight: 600;
+  text-transform: uppercase;
   margin: 0;
   b {
     font-weight: 700;
@@ -343,3 +345,45 @@ nav {
 }
 
 //------- END CARDS -------//
+
+//------- BEGIN LOADER -------//
+
+.spinner {
+  width: 90px;
+  height: 90px;
+  margin: 100px auto;
+  background-color: $aqua;
+
+  border-radius: 100%;  
+  -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+  animation: sk-scaleout 1.0s infinite ease-in-out;
+
+  &.centered {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+  }
+}
+
+@-webkit-keyframes sk-scaleout {
+  0% { -webkit-transform: scale(0) }
+  100% {
+    -webkit-transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+@keyframes sk-scaleout {
+  0% { 
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 100% {
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+//------- END LOADER -------//

@@ -7,11 +7,14 @@
  * # CommitteesCtrl
  * Controller of the alamunWebsiteApp
  */
-function CommitteesCtrl($scope) {
+function CommitteesCtrl($scope, $http) {
+    $scope.loading = true;
+    $scope.init = function() {
 
+    };
 }
 
-CommitteesCtrl.$inject = ['$scope'];
+CommitteesCtrl.$inject = ['$scope','$http'];
 
 var app = angular.module('alamunWebsiteApp');
 
