@@ -54,6 +54,9 @@ function config($stateProvider, $urlRouterProvider, $httpProvider) {
     }).state('app.schedule', {
       url: "/schedule",
       templateUrl: "views/schedule.html",
+    }).state('app.procedure', {
+      url: "/procedure",
+      templateUrl: "views/procedure.html",
     });
 }
 

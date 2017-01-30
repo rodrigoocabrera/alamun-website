@@ -1,6 +1,6 @@
 function DelegatesCtrl($scope, $window, $state) {
     $scope.items = [
-        {title: "DEBATING PROCEDURE", link: '/files/debating-procedure.pdf', image: '/images/debating-procedure.jpg'},
+        {title: "DEBATING PROCEDURE", state: 'app.procedure', image: '/images/debating-procedure.jpg'},
         {title: "SAMPLE POSITION PAPER", link: '/files/position-paper.pdf', image: '/images/position-paper.jpg'},
         {title: "DELEGATE FEE ($300 MXN)", image: '/images/fees.jpg'},
         {title: "SCHEDULE & AGENDA", image: '/images/schedule.jpg', state: 'app.schedule'}
