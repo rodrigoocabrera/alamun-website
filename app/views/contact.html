@@ -1,0 +1,31 @@
+<div class="contact-wrapper">
+    <div map-lazy-load="https://maps.google.com/maps/api/js">
+        <ng-map center="20.617574,-100.380988" zoom="16" style="height:600px;"  scrollwheel="false">
+            <marker position="[20.617574,-100.380988]"></marker>
+            <info-window id="1" position="20.617574,-100.380988" visible-on-marker="true">
+                <div ng-non-bindable>
+                    <b>Colegio Álamos</b><br/>
+                    Acceso al Aeropuerto #1000<br/>
+                    Col. Arboledas<br/>
+                    76140, Querétaro, Querétaro<br/>
+                </div>
+            </info-window>
+        </ng-map>
+    </div>
+
+    <h1 class="center">Get in touch!</h1>
+    <h3 class="center">Send us an email anytime, we'll reply as soon as possible.</h3>
+    <div class="spacer-md"></div>
+    <div class="grid">
+        <div class="col-6-12">
+            <img alt="" src="/images/email.svg" />
+            <h2 class="center"><a class="email" href="mailto:contact@alamun.com">contact@alamun.com</a></h2>
+        </div>
+        <div class="col-6-12">
+            <img alt="" src="/images/phone.svg" />
+            <h2 class="center">+52 442 182 0222</h2>
+        </div>
+    </div>
+    <h3 class="center">You can also contact us through Facebook and Twitter.</h3>
+    <div class="spacer-md"></div>
+</div>

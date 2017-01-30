@@ -41,6 +41,10 @@ function config($stateProvider, $urlRouterProvider, $httpProvider) {
       url: "/committees/{slug}",
       controller: 'CommitteesDetailCtrl',
       templateUrl: "views/committees-detail.html",
+    }).state('app.contact', {
+      url: "/contact",
+      controller: 'ContactCtrl',
+      templateUrl: "views/contact.html",
     });
 }
 
@@ -49,7 +53,8 @@ var app = angular.module('alamunWebsiteApp', [
     'ngTouch',
     'ui.router',
     'alamun.config',
-    'ngNotify'
+    'ngNotify',
+    'ngMap'
 ]);
 
 config.$inject = ['$stateProvider','$urlRouterProvider', '$httpProvider'];
