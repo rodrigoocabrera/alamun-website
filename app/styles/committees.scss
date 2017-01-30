@@ -1,2 +1,64 @@
+@import 'vars';
 .committees-wrapper {
+    .topics {
+        margin-top: 64px;
+        .topic {
+            height: 240px;
+            position: relative;
+        }
+        .topic-title {
+            margin: 16px 24px;
+            font-size: 1.7em;
+            text-align: center;
+            font-weight: $thin;
+        }
+        .btn {
+            position: absolute;
+            margin: auto;
+            bottom: 0;
+            display: block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    .delegations {
+        margin-top: 64px;
+        background-color: $faded-gray;
+        padding-top: 16px;
+        padding-bottom: 32px;
+
+        h2 {
+            margin-top: 16px;
+        }
+        .item {
+            width: calc(100% - 10px);
+            height: 80px;
+            margin-top: 16px;
+            border-radius: $radius;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                background-color: #000;
+                border-radius: $radius;
+                opacity: 0.75;
+                width: 100%;
+                height: 100%;
+            }
+            span {
+                color: white;
+                position: absolute;
+                font-weight: $light;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 1.3em;
+                text-align: center;
+                text-transform: uppercase;
+            }
+        }
+    }
 }

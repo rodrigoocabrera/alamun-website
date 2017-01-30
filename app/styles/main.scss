@@ -13,7 +13,6 @@ html, body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Raleway', $font;
   font-weight: 600;
-  text-transform: uppercase;
   margin: 0;
   b {
     font-weight: 700;
@@ -22,10 +21,17 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 3.3em;
+  text-transform: uppercase;
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 2.8em;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 1.8em;
+  font-weight: 400;
 }
 
 p {
@@ -40,6 +46,10 @@ p {
 
 .center {
   text-align: center;
+}
+
+.spacer-md {
+  margin-bottom: 120px;
 }
 
 //------- END GENERAL STYLES -------//
@@ -61,9 +71,9 @@ p {
   display: inline-block;
   text-align: center;
 
-  &:disabled {
-    cursor: default;
-    opacity: 0.7;
+  &:disabled, &[disabled] {
+    cursor: default !important;
+    opacity: 0.7 !important;
   }
 }
 
@@ -76,22 +86,22 @@ p {
 }
 
 .btn-primary {
-  background-color: $aqua;
-  color: white;
-  border-color: $aqua;
-  &:hover:not(:disabled) {
-    background-color: white;
-    color: $aqua;
-  }
-}
-
-.btn-green {
   background-color: $green;
   color: white;
   border-color: $green;
-  &:hover:not(:disabled) {
+  &:hover:not(:disabled):not([disabled]) {
     background-color: white;
     color: $green;
+  }
+}
+
+.btn-aqua {
+  background-color: $aqua;
+  color: white;
+  border-color: $aqua;
+  &:hover:not(:disabled):not([disabled]) {
+    background-color: white;
+    color: $aqua;
   }
 }
 
@@ -99,7 +109,7 @@ p {
   background-color: $gray;
   color: white;
   border-color: $gray;
-  &:hover:not(:disabled) {
+  &:hover:not(:disabled):not([disabled]) {
     background-color: white;
     color: $gray;
   }
@@ -109,7 +119,7 @@ p {
   background-color: $red;
   color: white;
   border-color: $red;
-  &:hover:not(:disabled) {
+  &:hover:not(:disabled):not([disabled]) {
     background-color: white;
     color: $red;
   }
@@ -119,7 +129,7 @@ p {
   background-color: $light-gray;
   color: white;
   border-color: $light-gray;
-  &:hover:not(:disabled) {
+  &:hover:not(:disabled):not([disabled]) {
     background-color: white;
     color: $light-gray;
   }
@@ -129,8 +139,18 @@ p {
   background-color: white;
   color: $gray;
   border-color: $gray;
-  &:hover:not(:disabled) {
+  &:hover:not(:disabled):not([disabled]) {
     background-color: $gray;
+    color: white;
+  }
+}
+
+.btn-white-inverse {
+  background-color: white;
+  color: $green;
+  border-color: white;
+  &:hover:not(:disabled):not([disabled]) {
+    background-color: $green;
     color: white;
   }
 }
@@ -139,7 +159,7 @@ p {
   background-color: white;
   color: $red;
   border-color: $red;
-  &:hover:not(:disabled) {
+  &:hover:not(:disabled):not([disabled]) {
     background-color: $red;
     color: white;
   }
@@ -410,3 +430,59 @@ nav {
 }
 
 //------- END LOADER -------//
+
+
+//------- BEGIN FOOTER -------//
+
+footer {
+  .footer-main {
+    height: 200px;
+    background-color: $green;
+    color: white;
+    padding-top: 16px;
+
+    h4 {
+      font-size: 1.8em;
+      text-align: center;
+      font-weight: $thin;
+    }
+    p {
+      font-size: 1.5em;
+    }
+    .btn {
+      margin: 0 auto;
+      display: block;
+      width: 100px;
+    }
+    .social-wrapper {
+      position: relative;
+      text-align: center;
+    }
+    .socials {
+      margin: 0 auto;
+      margin-top: 32px;
+      text-align: center;
+    }
+    .social-icon {
+      img {
+        height: 80px;
+        padding-right: 32px;
+      }
+      &:last-child {
+        img {
+          padding-right: 0;
+        }
+        
+      }
+    }
+  }
+  .copyright {
+    background-color: darken($green, 15);
+    color: white;
+    font-weight: $thin;
+    font-size: 1.4em;
+    padding: 8px 32px;
+  }
+}
+
+//------- END FOOTER -------//

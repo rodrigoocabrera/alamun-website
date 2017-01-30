@@ -8,6 +8,7 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,700|Raleway:300,700" rel="stylesheet">
         <!-- build:css(.) styles/vendor.css -->
         <!-- bower:css -->
+        <link rel="stylesheet" href="/bower_components/ng-notify/src/styles/ng-notify.css" />
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
@@ -22,20 +23,43 @@
             <ui-view></ui-view>
         </div>
 
+        <footer>
+            <div class="footer-main">
+                <div class="grid">
+                    <div class="col-4-12 hide-on-mobile">
+                        <h4>Register Now!</h4>
+                        <p>The alamun fills up quickly, register as soon as possible.</p>
+                        <a class="btn btn-white-inverse">REGISTER</a>
+                    </div>
+                    <div class="col-4-12 hide-on-mobile"></div>
+                    <div class="col-4-12 social-wrapper">
+                        <h4>Social</h4>
+                        <div class="socials">
+                            <a href="https://facebook.com/AlamunOfficial" target="_blank" class="social-icon"><img alt="" src="/images/facebook.svg"/></a>
+                            <a href="https://twitter.com/@AlamunOfficial" target="_blank" class="social-icon"><img alt="" src="/images/twitter.svg"/></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">&copy; 2017 Alamun | Colegio Alamos</a></div>
+        </footer>
+
         <!-- build:js(.) scripts/vendor.js -->
         <!-- bower:js -->
         <script src="/bower_components/angular/angular.js"></script>
         <script src="/bower_components/angular-animate/angular-animate.js"></script>
         <script src="/bower_components/angular-touch/angular-touch.js"></script>
         <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="/bower_components/ng-notify/src/scripts/ng-notify.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
             <script src="scripts/app.js"></script>
+            <script src="scripts/constants.js"></script>
+            <script src="scripts/factories.js"></script>
             <script src="scripts/controllers/main.js"></script>
             <script src="scripts/controllers/committees.js"></script>
-            <script src="scripts/constants.js"></script>
         <!-- endbuild -->
     </body>
 </html>

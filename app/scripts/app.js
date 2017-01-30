@@ -9,10 +9,12 @@
  * Main module of the application.
  */
 
-function config($stateProvider, $urlRouterProvider) {
+function config($stateProvider, $urlRouterProvider, $httpProvider) {
 
     $urlRouterProvider.when('', '/');
     $urlRouterProvider.otherwise('/404');
+
+    $httpProvider.interceptors.push('errorInterceptor');
 
     $stateProvider.state('app', {
       abstract: true,
@@ -46,9 +48,10 @@ var app = angular.module('alamunWebsiteApp', [
     'ngAnimate',
     'ngTouch',
     'ui.router',
-    'alamun.config'
+    'alamun.config',
+    'ngNotify'
 ]);
 
-config.$inject = ['$stateProvider','$urlRouterProvider'];
+config.$inject = ['$stateProvider','$urlRouterProvider', '$httpProvider'];
 
 app.config(config);

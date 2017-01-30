@@ -1,1 +1,24 @@
-det
+<div class="committees-wrapper" ng-init="init()">
+    <h1 class="center">{{ (loading) ? 'Loading...' : committee.name }}</h1>
+    <div class="spinner centered" ng-if="loading"></div>
+
+    <div class="topics grid">
+        <div class="col-6-12 topic" ng-repeat="topic in committee.topics">
+            <h2 class="center">Topic {{ alphabet[$index] }}</h2>
+            <div class="topic-title">{{topic.title}}</div>
+            <a class="btn btn-primary" ng-disabled="!topic.document_url" target="_blank" ng-href="{{ (topic.document_url) ? $api + topic.document_url : null }}">{{ (topic.document_url) ? 'BACKGROUND INFORMATION' : 'BG INFO NOT AVAILABLE' }}</a>
+        </div>
+        <h3 class="center" ng-if="committee.topics.length == 0">This committee has no topics.</h3>
+    </div>
+
+    <div class="delegations">
+        <div class="grid">
+            <h2 class="center" ng-if="committee.delegations.length == 0">This committee has no delegations.</h2>
+            <h2 class="center" ng-if="committee.delegations.length != 0">Delegations</h2>
+            <div class="col-6-12" data-ng-repeat="delegation in committee.delegations | orderBy: 'short_name'">
+                <div class="item" style="background-image:url('{{$api + delegation.country.flag}}')"><span>{{ delegation.country.short_name }}</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="spacer-md"></div>
+</div>

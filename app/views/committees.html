@@ -11,7 +11,7 @@
                     <p ng-if="committee.topics.length == 0" class="helper">This committee has no topics.</p>
                     <a class="btn btn-helper" ui-sref="app.committees_detail({slug: committee.slug})" style="border-color:{{committee.color || '#2DD49B' }};color:{{committee.color || '#2DD49B' }}">Details</a>
                     <span class="left-stat">
-                        <span class="number">{{committee.delegations || '0'}}</span>
+                        <span class="number">{{committee.delegation_count || '0'}}</span>
                         <span class="caption">delegations</span>
                     </span>
                 </div>
