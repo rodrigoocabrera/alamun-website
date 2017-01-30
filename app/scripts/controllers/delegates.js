@@ -6,7 +6,7 @@ function DelegatesCtrl($scope, $window, $state) {
         {title: "SCHEDULE & AGENDA", image: '/images/schedule.jpg', state: 'app.schedule'}
     ];
 
-    $scope.url = function(url, state=null) {
+    $scope.url = function(url, state) {
         if (url) $window.open(url);
         if (state) $state.go(state);
     }
