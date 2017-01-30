@@ -10,4 +10,5 @@ def deploy():
         run('npm install')
         run('bower install')
         run('gulp')
+        run("rename -v 's/.+/index.html/' ./index-*.html")
         sudo('service nginx restart')
