@@ -47,6 +47,13 @@ function config($stateProvider, $urlRouterProvider, $httpProvider) {
     }).state('app.registration', {
       url: "/registration",
       templateUrl: "views/registration.html",
+    }).state('app.delegates', {
+      url: "/delegates",
+      controller: 'DelegatesCtrl',
+      templateUrl: "views/delegates.html",
+    }).state('app.schedule', {
+      url: "/schedule",
+      templateUrl: "views/schedule.html",
     });
 }
 

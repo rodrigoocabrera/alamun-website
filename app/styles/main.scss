@@ -5,6 +5,8 @@
 @import 'committees';
 @import 'contact';
 @import 'registration';
+@import 'delegates';
+@import 'schedule';
 
 html, body {
   height: calc(100% - 96px);
@@ -56,6 +58,10 @@ a {
 
 .spacer-md {
   margin-bottom: 120px;
+}
+
+.pointer {
+    cursor: pointer;
 }
 
 //------- END GENERAL STYLES -------//

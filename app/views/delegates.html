@@ -1,0 +1,10 @@
+<div class="delegates-wrapper">
+    <h1 class="center">DELEGATES &amp; INFORMATION</h1>
+    <div class="grid">
+        <div class="col-6-12" ng-repeat="item in items">
+            <div class="element" style="background-image:url('{{item.image}}')" ng-class="{'pointer': item.link || item.state }" ng-click="url(item.link, item.state)">
+                <span>{{ item.title }}</span>
+            </div>
+        </div>
+    </div>
+</div>
