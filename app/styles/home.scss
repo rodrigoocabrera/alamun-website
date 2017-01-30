@@ -1,0 +1,78 @@
+.home-wrapper {
+    h1 {
+        text-align: center;
+        b {
+            display: block;
+        }
+    }
+    .main-text {
+        font-size: 1.6em;
+        padding: 0 18%;
+        text-align: center;
+    }
+    .date {
+        text-align: center;
+        font-size: 3.1em;
+        font-family: 'Raleway';
+        color: $green;
+        margin-bottom: 32px;
+    }
+    div.caption {
+        text-align: center;
+        font-size: 2.2em;
+    }
+    section {
+        &.by-numbers {
+            background-color: $faded-gray;
+            h2 {
+                padding: 16px;
+            }
+            .grid {
+                text-align: center;
+                margin-top: 32px;
+                padding-bottom: 32px;
+                .help-block, .number {
+                    font-size: 2.8em;
+                    color: $aqua;
+                    &.green {
+                        color: $green;
+                    }
+                    &.blue {
+                        color: $blue;
+                    }
+                }
+                .number {
+                    font-weight: $bold;
+                }
+            }
+            .counting {
+                color: $light-gray;
+                font-weight: $bold;
+                text-align: center;
+                font-size: 3.3em;
+                padding-bottom: 32px;
+            }
+        }
+    }
+    @media handheld,
+    only screen and (max-width: $mobile) {
+        .main-text {
+            padding: 0 7%;
+        }
+        section {
+            &.by-numbers {
+                h2 {
+                    text-align: center;
+                }
+                .grid {
+                    .col-4-12 {
+                        margin-top: 32px;
+                        &:first-child {
+                            margin-top: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
