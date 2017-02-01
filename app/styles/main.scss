@@ -50,6 +50,12 @@ a {
     color: $green;
 }
 
+@media handheld, only screen and (max-width: $mobile) {
+    h1 {
+        font-size: 2.8em;
+    }
+}
+
 //------- BEGIN GENERAL STYLES -------//
 
 .center {
@@ -285,6 +291,11 @@ nav {
     .helper-right {
       display: none;
     }
+      .logo {
+          img {
+              max-width: 180px;
+          }
+      }
   }
   body.show-mobile-menu {
     overflow: hidden;
@@ -403,6 +414,18 @@ nav {
       }
     }
   }
+}
+
+@media handheld, only screen and (max-width: $mobile) {
+    .card {
+        height: auto;
+        .card-inner {
+            padding-bottom: 60px;
+            p {
+                font-size: 0.8em !important;
+            }
+        }
+    }
 }
 
 //------- END CARDS -------//

@@ -61,4 +61,11 @@
             }
         }
     }
+    @media handheld, only screen and (max-width: $mobile) {
+        .delegations {
+            .item {
+                width: auto;
+            }
+        }
+    }
 }
