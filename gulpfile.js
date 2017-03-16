@@ -182,8 +182,13 @@ gulp.task('copy:fonts', function () {
     .pipe(gulp.dest(yeoman.dist + '/fonts'));
 });
 
+gulp.task('copy:netlify', function () {
+  return gulp.src(yeoman.app + '/_*')
+    .pipe(gulp.dest(yeoman.dist));
+});
+
 gulp.task('build', ['clean:dist'], function () {
-  runSequence(['images', 'files', 'copy:extras', 'copy:fonts', 'client:build']);
+  runSequence(['images', 'files', 'copy:extras', 'copy:fonts', 'copy:netlify', 'client:build']);
 });
 
 gulp.task('default', ['build']);
