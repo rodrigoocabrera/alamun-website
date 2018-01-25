@@ -12,7 +12,7 @@ function CommitteesCtrl($scope, $http, $env) {
     $scope.committees = [];
 
     $scope.init = function() {
-        $http.get($env.API + '/api/v1/alamun/2017/committees').then(function(response) {
+        $http.get($env.API + '/api/v1/alamun/2018/committees').then(function(response) {
             $scope.committees = response.data;
             $scope.loading = false;
         });
@@ -27,7 +27,7 @@ function CommitteesDetailCtrl($scope, $http, $env, $state) {
     $scope.alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"];
 
     $scope.init = function() {
-        $http.get($env.API + '/api/v1/alamun/2017/committees/' + $state.params.slug).then(function(response) {
+        $http.get($env.API + '/api/v1/alamun/2018/committees/' + $state.params.slug).then(function(response) {
             $scope.committee = response.data;
             $scope.loading = false;
         });
